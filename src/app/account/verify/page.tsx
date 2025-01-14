@@ -6,6 +6,8 @@ import { VerifyAccountForm } from '@/components/features/auth/forms/VerifyAccoun
 
 import { NO_INDEX_PAGE } from '@/constants/seo.constants'
 
+import { ACCOUNT_PAGE } from '@/config/account-page.config'
+
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('auth.verify')
 
@@ -21,7 +23,7 @@ export default async function VerifyAccountPage(props: {
   const searchParams = await props.searchParams
 
   if (!searchParams.token) {
-    return redirect('/account/create')
+    return redirect(ACCOUNT_PAGE.CREATE)
   }
 
   return <VerifyAccountForm />

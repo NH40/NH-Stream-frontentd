@@ -8,6 +8,8 @@ import { toast } from 'sonner'
 
 import { useVerifyAccountMutation } from '@/graphql/generated/output'
 
+import { DASHBOARD_PAGE } from '@/config/dashboard-page'
+
 import { AuthWrapper } from '../AuthWrapper'
 
 export function VerifyAccountForm() {
@@ -24,7 +26,7 @@ export function VerifyAccountForm() {
     onCompleted() {
       // auth()
       toast.success(t('successMessage'))
-      router.push('/dashboard/settings')
+      router.push(DASHBOARD_PAGE.SETTINGS)
     },
     onError() {
       toast.error(t('errorMessage'))

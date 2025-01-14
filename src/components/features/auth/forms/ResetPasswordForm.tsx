@@ -30,6 +30,8 @@ import {
   resetPasswordSchema
 } from '@/schemas/auth/reset-password.schema'
 
+import { ACCOUNT_PAGE } from '@/config/account-page.config'
+
 import { AuthWrapper } from '../AuthWrapper'
 
 export function ResetPasswordForm() {
@@ -65,7 +67,7 @@ export function ResetPasswordForm() {
     <AuthWrapper
       heading={t('heading')}
       backButtonLabel={t('backButtonLabel')}
-      backButtonHref='/account/login'
+      backButtonHref={ACCOUNT_PAGE.LOGIN}
     >
       {isSuccess ? (
         <Alert>

@@ -30,6 +30,8 @@ import {
   createAccountSchema
 } from '@/schemas/auth/create-account.schema'
 
+import { ACCOUNT_PAGE } from '@/config/account-page.config'
+
 import { AuthWrapper } from '../AuthWrapper'
 
 export function CreateAccountForm() {
@@ -69,7 +71,7 @@ export function CreateAccountForm() {
     <AuthWrapper
       heading={t('heading')}
       backButtonLabel={t('backButtonLabel')}
-      backButtonHref='/account/login'
+      backButtonHref={ACCOUNT_PAGE.LOGIN}
     >
       {isSuccess ? (
         <Alert>

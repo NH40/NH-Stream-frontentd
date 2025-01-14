@@ -24,6 +24,8 @@ import {
   newPasswordSchema
 } from '@/schemas/auth/new-passsword.schema'
 
+import { ACCOUNT_PAGE } from '@/config/account-page.config'
+
 import { AuthWrapper } from '../AuthWrapper'
 
 export function NewPasswordForm() {
@@ -60,7 +62,7 @@ export function NewPasswordForm() {
     <AuthWrapper
       heading={t('heading')}
       backButtonLabel={t('backButtonLabel')}
-      backButtonHref='/account/login'
+      backButtonHref={ACCOUNT_PAGE.LOGIN}
     >
       <Form {...form}>
         <form

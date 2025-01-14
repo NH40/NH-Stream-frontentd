@@ -28,6 +28,8 @@ import { useLoginUserMutation } from '@/graphql/generated/output'
 
 import { type TypeLoginSchema, loginSchema } from '@/schemas/auth/login.schema'
 
+import { ACCOUNT_PAGE } from '@/config/account-page.config'
+
 import { AuthWrapper } from '../AuthWrapper'
 
 export function LoginForm() {
@@ -70,7 +72,7 @@ export function LoginForm() {
     <AuthWrapper
       heading={t('heading')}
       backButtonLabel={t('backButtonLabel')}
-      backButtonHref='/account/create'
+      backButtonHref={ACCOUNT_PAGE.CREATE}
     >
       <Form {...form}>
         <form
@@ -130,7 +132,7 @@ export function LoginForm() {
                     <div className='flex items-center justify-between'>
                       <FormLabel>{t('passwordLabel')}</FormLabel>
                       <Link
-                        href='/account/recovery'
+                        href={ACCOUNT_PAGE.RECOVERY()}
                         className='ml-auto inline-block text-sm'
                       >
                         {t('forgotPassword')}
