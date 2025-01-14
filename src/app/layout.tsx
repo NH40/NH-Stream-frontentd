@@ -5,6 +5,7 @@ import { getLocale, getMessages } from 'next-intl/server'
 
 import { ApolloClientProvider } from '@/providers/ApolloClientProvider'
 import { ThemeProvider } from '@/providers/ThemeProvider'
+import { ToastProvider } from '@/providers/ToastProvider'
 
 import '@/styles/globals.css'
 
@@ -22,7 +23,10 @@ export default async function RootLayout({
   const messages = await getMessages()
 
   return (
-    <html lang={locale}>
+    <html
+      lang={locale}
+      suppressHydrationWarning
+    >
       <body className={GeistSans.variable}>
         <ApolloClientProvider>
           <NextIntlClientProvider messages={messages}>
@@ -31,6 +35,7 @@ export default async function RootLayout({
               defaultTheme='dark'
               disableTransitionOnChange
             >
+              <ToastProvider />
               {children}
             </ThemeProvider>
           </NextIntlClientProvider>
