@@ -28,12 +28,17 @@ import { useLoginUserMutation } from '@/graphql/generated/output'
 
 import { type TypeLoginSchema, loginSchema } from '@/schemas/auth/login.schema'
 
+import { useAuth } from '@/hooks/useAuth'
+
 import { ACCOUNT_PAGE } from '@/config/account-page.config'
+import { DASHBOARD_PAGE } from '@/config/dashboard-page'
 
 import { AuthWrapper } from '../AuthWrapper'
 
 export function LoginForm() {
   const t = useTranslations('auth.login')
+
+  const { auth } = useAuth()
 
   const router = useRouter()
 
@@ -52,9 +57,9 @@ export function LoginForm() {
       if (data.loginUser.message) {
         setIsShowTwoFactor(true)
       } else {
-        // auth()
+        auth()
         toast.success(t('successMessage'))
-        router.push('/dashboard/settings')
+        router.push(DASHBOARD_PAGE.SETTINGS)
       }
     },
     onError() {
