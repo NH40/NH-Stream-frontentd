@@ -20,6 +20,11 @@ import { useLogoutUserMutation } from '@/graphql/generated/output'
 import { useAuth } from '@/hooks/useAuth'
 import { useCurrent } from '@/hooks/useCurrent'
 
+import { DASHBOARD_PAGE } from '@/config/dashboard-page'
+import { PUBLIC_PAGE } from '@/config/public-page.config'
+
+import { Notifications } from './notifications/Notifications'
+
 export function ProfileMenu() {
   const t = useTranslations('layout.header.headerMenu.profileMenu')
   const router = useRouter()
@@ -42,7 +47,7 @@ export function ProfileMenu() {
     <Loader className='size-6 animate-spin text-muted-foreground' />
   ) : (
     <>
-      {/* <Notifications /> */}
+      <Notifications />
       <DropdownMenu>
         <DropdownMenuTrigger>
           <ChannelAvatar channel={user} />
@@ -56,13 +61,13 @@ export function ProfileMenu() {
             <h2 className='font-medium text-foreground'>{user.username}</h2>
           </div>
           <DropdownMenuSeparator />
-          <Link href={`/${user.username}`}>
+          <Link href={PUBLIC_PAGE.CHANEL(user.username)}>
             <DropdownMenuItem>
               <User className='mr-2 size-2' />
               {t('channel')}
             </DropdownMenuItem>
           </Link>
-          <Link href='/dashboard/settings'>
+          <Link href={DASHBOARD_PAGE.SETTINGS}>
             <DropdownMenuItem>
               <LayoutDashboard className='mr-2 size-2' />
               {t('dashboard')}

@@ -7,12 +7,14 @@ import { LogoImage } from '@/components/images/LogoImage'
 
 import { SITE_NAME } from '@/constants/seo.constants'
 
+import { PUBLIC_PAGE } from '@/config/public-page.config'
+
 export function Logo() {
   const t = useTranslations('layout.header.logo')
 
   return (
     <Link
-      href='/'
+      href={PUBLIC_PAGE.HOME}
       className='flex items-center gap-x-4 transition-opacity hover:opacity-75'
     >
       <LogoImage />
