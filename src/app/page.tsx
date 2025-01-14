@@ -1,3 +1,9 @@
+'use client'
+
+import { useTranslations } from 'next-intl'
+
 export default function Home() {
-  return <div>HomePage</div>
+  const t = useTranslations('home')
+
+  return <div>{t('streamsHeading')}</div>
 }
