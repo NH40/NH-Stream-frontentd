@@ -7,7 +7,7 @@
   "jsxSingleQuote": true,
   "arrowParens": "avoid",
   "singleAttributePerLine": true,
-  "printWidth": 90,
+  "printWidth": 80,
   "proseWrap": "always",
   "bracketSpacing": true,
   "importOrder": [
@@ -36,5 +36,8 @@
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
-  "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"]
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ]
 }
