@@ -1,11 +1,13 @@
-import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client'
+import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
+
+import { SERVER_URL } from '@/constants/url.constants'
 
 const httpLink = createHttpLink({
-	uri: process.env.NEXT_PUBLIC_SERVER_URL,
-	credentials: 'include',
-	headers: {
-		'apollo-require-preflight': 'true'
-	}
+  uri: SERVER_URL,
+  credentials: 'include',
+  headers: {
+    'apollo-require-preflight': 'true'
+  }
 })
 
 // const wsLink = new WebSocketLink({
@@ -29,7 +31,6 @@ const httpLink = createHttpLink({
 // )
 
 export const client = new ApolloClient({
-	link: httpLink,
-	cache: new InMemoryCache()
+  link: httpLink,
+  cache: new InMemoryCache()
 })
-

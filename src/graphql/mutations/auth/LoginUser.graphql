@@ -1,8 +1,8 @@
 mutation LoginUser($data: LoginInput!) {
-  loginUser(data: $data) {
-    user {
-      username
-    }
-    message
-  }
+	loginUser(data: $data) {
+		user {
+			username
+		}
+		message
+	}
 }
