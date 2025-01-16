@@ -8,6 +8,8 @@ import {
 } from '@/components/ui/common/Tabs'
 import { Heading } from '@/components/ui/elements/Heading'
 
+import { ChangeAvatarForm } from './profile/ChangeAvatarForm'
+
 export function UserSettings() {
   const t = useTranslations('dashboard.settings')
 
@@ -37,9 +39,9 @@ export function UserSettings() {
               title={t('profile.header.heading')}
               description={t('profile.header.description')}
             />
-            {/* <ChangeAvatarForm />
-            <ChangeInfoForm />
-            <SocialLinksForm /> */}
+            <ChangeAvatarForm />
+            {/* <ChangeInfoForm /> */}
+            {/* <SocialLinksForm /> */}
           </div>
         </TabsContent>
         <TabsContent value='account'>
