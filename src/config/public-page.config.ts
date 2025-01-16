@@ -3,6 +3,10 @@ class PublicPage {
 
   STREAMS = '/streams'
 
+  CATEGORIES(slug?: string) {
+    return `/categories/${slug ? slug : ''}`
+  }
+
   CHANEL(username: string) {
     return `/${username}`
   }
