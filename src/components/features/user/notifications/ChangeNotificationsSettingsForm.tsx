@@ -42,7 +42,7 @@ export function ChangeNotificationsSettingsForm() {
 
         if (data.changeNotificationsSettings.telegramAuthToken) {
           window.open(
-            `https://t.me/TeaStreamBot?start=${data.changeNotificationsSettings.telegramAuthToken}`,
+            `https://t.me/nhstream_bot?start=${data.changeNotificationsSettings.telegramAuthToken}`,
             '_blank'
           )
         }
