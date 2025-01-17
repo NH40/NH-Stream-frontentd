@@ -8,6 +8,13 @@ import {
 } from '@/components/ui/common/Tabs'
 import { Heading } from '@/components/ui/elements/Heading'
 
+import { ChangeEmailForm } from './account/ChangeEmailForm'
+import { ChangePasswordForm } from './account/ChangePasswordForm'
+import { DeactivateCard } from './account/DeactivateCard'
+import { WrapperTotp } from './account/totp/WrapperTotp'
+import { ChangeColorForm } from './appearance/ChangeColorForm'
+import { ChangeLanguageForm } from './appearance/ChangeLanguageForm'
+import { ChangeThemeForm } from './appearance/ChangeThemeForm'
 import { ChangeAvatarForm } from './profile/ChangeAvatarForm'
 import { ChangeInfoForm } from './profile/ChangeInfoForm'
 import { SocialLinksForm } from './profile/social-links-form/SocialLinksForm'
@@ -52,18 +59,18 @@ export function UserSettings() {
               title={t('account.header.heading')}
               description={t('account.header.description')}
             />
-            {/* <ChangeEmailForm />
-            <ChangePasswordForm /> */}
+            <ChangeEmailForm />
+            <ChangePasswordForm />
             <Heading
               title={t('account.header.securityHeading')}
               description={t('account.header.securityDescription')}
             />
-            {/* <WrapperTotp /> */}
+            <WrapperTotp />
             <Heading
               title={t('account.header.deactivationHeading')}
               description={t('account.header.deactivationDescription')}
             />
-            {/* <DeactivateCard /> */}
+            <DeactivateCard />
           </div>
         </TabsContent>
         <TabsContent value='appearance'>
@@ -72,9 +79,9 @@ export function UserSettings() {
               title={t('appearance.header.heading')}
               description={t('appearance.header.description')}
             />
-            {/* <ChangeThemeForm />
+            <ChangeThemeForm />
             <ChangeLanguageForm />
-            <ChangeColorForm /> */}
+            <ChangeColorForm />
           </div>
         </TabsContent>
         <TabsContent value='notifications'>

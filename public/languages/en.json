@@ -375,7 +375,7 @@
           "description": "Customize the look of the website interface to your liking. Choose a theme and language that make your experience more comfortable."
         },
         "theme": {
-          "heading": "Change Theme",
+          "heading": "Dark Theme",
           "description": "You can choose a dark or light theme for the website interface.",
           "successMessage": "The website theme has been successfully changed"
         },

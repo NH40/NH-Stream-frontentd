@@ -84,5 +84,5 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-secondary rounded-full;
+  @apply rounded-full bg-secondary;
 }

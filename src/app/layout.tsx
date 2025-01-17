@@ -3,11 +3,14 @@ import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getLocale, getMessages } from 'next-intl/server'
 
+import { ColorSwitcher } from '@/components/ui/elements/ColorSwitcher'
+
 import { ApolloClientProvider } from '@/providers/ApolloClientProvider'
 import { ThemeProvider } from '@/providers/ThemeProvider'
 import { ToastProvider } from '@/providers/ToastProvider'
 
 import '@/styles/globals.css'
+import '@/styles/themes.css'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -28,6 +31,7 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <body className={GeistSans.variable}>
+        <ColorSwitcher />
         <ApolloClientProvider>
           <NextIntlClientProvider messages={messages}>
             <ThemeProvider
