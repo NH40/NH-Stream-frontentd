@@ -15,6 +15,7 @@ import { WrapperTotp } from './account/totp/WrapperTotp'
 import { ChangeColorForm } from './appearance/ChangeColorForm'
 import { ChangeLanguageForm } from './appearance/ChangeLanguageForm'
 import { ChangeThemeForm } from './appearance/ChangeThemeForm'
+import { ChangeNotificationsSettingsForm } from './notifications/ChangeNotificationsSettingsForm'
 import { ChangeAvatarForm } from './profile/ChangeAvatarForm'
 import { ChangeInfoForm } from './profile/ChangeInfoForm'
 import { SocialLinksForm } from './profile/social-links-form/SocialLinksForm'
@@ -90,7 +91,7 @@ export function UserSettings() {
               title={t('notifications.header.heading')}
               description={t('notifications.header.description')}
             />
-            {/* <ChangeNotificationsSettingsForm /> */}
+            <ChangeNotificationsSettingsForm />
           </div>
         </TabsContent>
         <TabsContent value='sessions'>
