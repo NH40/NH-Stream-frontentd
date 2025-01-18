@@ -25,6 +25,8 @@ import {
   useFindMyFollowersQuery
 } from '@/graphql/generated/output'
 
+import { PUBLIC_PAGE } from '@/config/public-page.config'
+
 import { formatDate } from '@/utils/format-date'
 
 export function FollowersTable() {
@@ -70,7 +72,7 @@ export function FollowersTable() {
           </DropdownMenuTrigger>
           <DropdownMenuContent side='right'>
             <Link
-              href={`/${row.original.follower.username}`}
+              href={PUBLIC_PAGE.CHANNEL(row.original.follower.username)}
               target='_blank'
             >
               <DropdownMenuItem>

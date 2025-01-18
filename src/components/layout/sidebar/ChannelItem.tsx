@@ -51,7 +51,7 @@ export function ChannelItem({ channel }: ChannelItemProps) {
       asChild
     >
       <Link
-        href={`/${channel.username}`}
+        href={PUBLIC_PAGE.CHANNEL(channel.username)}
         className='flex w-full items-center'
       >
         <ChannelAvatar

@@ -6,6 +6,8 @@ import { ChannelVerified } from '@/components/ui/elements/ChannelVerified'
 
 import type { FindRandomStreamsQuery } from '@/graphql/generated/output'
 
+import { PUBLIC_PAGE } from '@/config/public-page.config'
+
 import { StreamThumbnail } from './StreamThumbnail'
 
 interface StreamCardProps {
@@ -15,7 +17,7 @@ interface StreamCardProps {
 export function StreamCard({ stream }: StreamCardProps) {
   return (
     <div className='h-full w-full'>
-      <Link href={`/${stream.user.username}`}>
+      <Link href={PUBLIC_PAGE.CHANNEL(stream.user.username)}>
         <StreamThumbnail
           url={stream.thumbnailUrl}
           user={stream.user}
@@ -37,7 +39,7 @@ export function StreamCard({ stream }: StreamCardProps) {
           </h2>
           {stream.category && (
             <Link
-              href={`/categories/${stream.category.slug}`}
+              href={PUBLIC_PAGE.CATEGORIES(stream.category.slug)}
               className='text-muted-foreground'
             >
               {stream.category.title}

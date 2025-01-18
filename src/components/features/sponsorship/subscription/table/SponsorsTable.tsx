@@ -25,6 +25,8 @@ import {
   useFindMySponsorsQuery
 } from '@/graphql/generated/output'
 
+import { PUBLIC_PAGE } from '@/config/public-page.config'
+
 import { formatDate } from '@/utils/format-date'
 
 export function SponsorsTable() {
@@ -74,7 +76,7 @@ export function SponsorsTable() {
             </DropdownMenuTrigger>
             <DropdownMenuContent side='right'>
               <Link
-                href={`/${row.original.user.username}`}
+                href={PUBLIC_PAGE.CHANNEL(row.original.user.username)}
                 target='_blank'
               >
                 <DropdownMenuItem>
