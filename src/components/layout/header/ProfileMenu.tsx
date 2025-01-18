@@ -61,7 +61,7 @@ export function ProfileMenu() {
             <h2 className='font-medium text-foreground'>{user.username}</h2>
           </div>
           <DropdownMenuSeparator />
-          <Link href={PUBLIC_PAGE.CHANEL(user.username)}>
+          <Link href={PUBLIC_PAGE.CHANNEL(user.username)}>
             <DropdownMenuItem>
               <User className='mr-2 size-2' />
               {t('channel')}

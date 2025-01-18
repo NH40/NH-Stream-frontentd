@@ -7,7 +7,7 @@ class PublicPage {
     return `/categories/${slug ? slug : ''}`
   }
 
-  CHANEL(username: string) {
+  CHANNEL(username: string) {
     return `/${username}`
   }
 

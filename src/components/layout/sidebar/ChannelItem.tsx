@@ -14,6 +14,8 @@ import { FindRecommendedChannelsQuery } from '@/graphql/generated/output'
 
 import { useSidebar } from '@/hooks/useSidebar'
 
+import { PUBLIC_PAGE } from '@/config/public-page.config'
+
 import { cn } from '@/utils/tw-merge'
 
 interface ChannelItemProps {
@@ -33,7 +35,7 @@ export function ChannelItem({ channel }: ChannelItemProps) {
       asChild
     >
       <Link
-        href={`/${channel.username}`}
+        href={PUBLIC_PAGE.CHANNEL(channel.username)}
         className='mt-3 flex w-full items-center justify-center'
       >
         <ChannelAvatar

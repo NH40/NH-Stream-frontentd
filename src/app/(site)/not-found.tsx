@@ -3,6 +3,8 @@ import Link from 'next/link'
 
 import { Button } from '@/components/ui/common/Button'
 
+import { PUBLIC_PAGE } from '@/config/public-page.config'
+
 export default async function NotFoundPage() {
   const t = await getTranslations('notFound')
 
@@ -14,7 +16,7 @@ export default async function NotFoundPage() {
         </h1>
         <p className='mt-3 text-muted-foreground'>{t('description')}</p>
         <Link
-          href='/'
+          href={PUBLIC_PAGE.HOME}
           className='mt-5 flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-3'
         >
           <Button variant='secondary'>{t('backToHome')}</Button>

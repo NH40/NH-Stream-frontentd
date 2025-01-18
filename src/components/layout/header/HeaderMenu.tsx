@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/common/Button'
 
 import { useAuth } from '@/hooks/useAuth'
 
+import { ACCOUNT_PAGE } from '@/config/account-page.config'
+
 import { ProfileMenu } from './ProfileMenu'
 
 export function HeaderMenu() {
@@ -19,10 +21,10 @@ export function HeaderMenu() {
         <ProfileMenu />
       ) : (
         <>
-          <Link href='/account/login'>
+          <Link href={ACCOUNT_PAGE.LOGIN}>
             <Button variant='secondary'>{t('login')}</Button>
           </Link>
-          <Link href='/account/create'>
+          <Link href={ACCOUNT_PAGE.CREATE}>
             <Button>{t('register')}</Button>
           </Link>
         </>
