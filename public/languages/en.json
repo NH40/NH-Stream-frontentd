@@ -538,7 +538,7 @@
       },
       "alert": {
         "heading": "Channel verification required",
-        "description": "To create premium plans, your channel must be verified. You only need 10 subscribers to get the checkmark and unlock access to this feature."
+        "description": "To create premium plans, your channel must be verified. You only need 3 subscribers to get the checkmark and unlock access to this feature."
       },
       "createForm": {
         "trigger": "Create Plan",
