@@ -1,6 +1,7 @@
 import { Share } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import {
+  FaFacebook,
   FaMailBulk,
   FaReddit,
   FaTelegram,
@@ -9,6 +10,7 @@ import {
 } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import {
+  FacebookShareButton,
   MailruShareButton,
   RedditShareButton,
   TelegramShareButton,
@@ -81,6 +83,11 @@ export function ShareActions({ channel }: ShareActionsProps) {
               <FaMailBulk className='size-7 text-white' />
             </div>
           </MailruShareButton>
+          <FacebookShareButton url={shareUrl}>
+            <div className='flex h-14 items-center justify-center rounded-md bg-blue-700 transition-transform hover:-translate-y-1.5'>
+              <FaFacebook className='size-7 text-white' />
+            </div>
+          </FacebookShareButton>
         </div>
       </PopoverContent>
     </Popover>
