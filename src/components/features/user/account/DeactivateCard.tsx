@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/common/Button'
 import { CardContainer } from '@/components/ui/elements/CardContainer'
 import { ConfirmModal } from '@/components/ui/elements/ConfirmModal'
 
+import { ACCOUNT_PAGE } from '@/config/account-page.config'
+
 export function DeactivateCard() {
   const t = useTranslations('dashboard.settings.account.deactivation')
 
@@ -21,7 +23,7 @@ export function DeactivateCard() {
           <ConfirmModal
             heading={t('confirmModal.heading')}
             message={t('confirmModal.message')}
-            onConfirm={() => router.push('/account/deactivate')}
+            onConfirm={() => router.push(ACCOUNT_PAGE.DEACTIVATE)}
           >
             <Button>{t('button')}</Button>
           </ConfirmModal>

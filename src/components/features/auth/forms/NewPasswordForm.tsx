@@ -45,7 +45,7 @@ export function NewPasswordForm() {
   const [newPassword, { loading: isLoadingNew }] = useNewPasswordMutation({
     onCompleted(data) {
       toast.success(t('successMessage'))
-      router.push('/account/login')
+      router.push(ACCOUNT_PAGE.LOGIN)
     },
     onError() {
       toast.error(t('errorMessage'))

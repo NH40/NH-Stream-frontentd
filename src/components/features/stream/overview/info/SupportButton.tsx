@@ -27,6 +27,8 @@ import {
 import { useAuth } from '@/hooks/useAuth'
 import { useCurrent } from '@/hooks/useCurrent'
 
+import { ACCOUNT_PAGE } from '@/config/account-page.config'
+
 import { convertPrice } from '@/utils/convert-price'
 
 interface SupportButtonProps {
@@ -127,7 +129,7 @@ export function SupportButton({ channel }: SupportButtonProps) {
     </Dialog>
   ) : (
     <Button
-      onClick={() => router.push('/account/login')}
+      onClick={() => router.push(ACCOUNT_PAGE.LOGIN)}
       variant='secondary'
     >
       <Medal className='size-4' />

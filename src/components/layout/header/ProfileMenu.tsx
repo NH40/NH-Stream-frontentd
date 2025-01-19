@@ -20,6 +20,7 @@ import { useLogoutUserMutation } from '@/graphql/generated/output'
 import { useAuth } from '@/hooks/useAuth'
 import { useCurrent } from '@/hooks/useCurrent'
 
+import { ACCOUNT_PAGE } from '@/config/account-page.config'
 import { DASHBOARD_PAGE } from '@/config/dashboard-page'
 import { PUBLIC_PAGE } from '@/config/public-page.config'
 
@@ -36,7 +37,7 @@ export function ProfileMenu() {
     onCompleted() {
       exit()
       toast.success(t('successMessage'))
-      router.push('/account/login')
+      router.push(ACCOUNT_PAGE.LOGIN)
     },
     onError() {
       toast.error(t('errorMessage'))

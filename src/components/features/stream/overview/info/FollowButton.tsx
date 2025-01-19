@@ -16,6 +16,8 @@ import {
 import { useAuth } from '@/hooks/useAuth'
 import { useCurrent } from '@/hooks/useCurrent'
 
+import { ACCOUNT_PAGE } from '@/config/account-page.config'
+
 interface FollowButtonProps {
   channel: FindChannelByUsernameQuery['findChannelByUsername']
 }
@@ -83,7 +85,7 @@ export function FollowButton({ channel }: FollowButtonProps) {
       onClick={() =>
         isAuthenticated
           ? follow({ variables: { channelId: channel.id } })
-          : router.push('/account/login')
+          : router.push(ACCOUNT_PAGE.LOGIN)
       }
       disabled={isLoadingFollowings || isLoadingFollow}
     >
